@@ -1,0 +1,26 @@
+{
+  "name": "nodeserverapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "start.js",
+  "scripts": {
+    "dev": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/UlissesUSM/nodeserverapi"
+  },
+  "author": "ulisses",
+  "license": "ISC",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "body-parser": "1.18.3",
+    "express": "4.16.4",
+    "mongoose": "^5.4.13",
+    "request": "2.88.0"
+  },
+  "devDependencies": {
+    "babel-preset-node8": "^1.2.0",
+    "nodemon": "^1.18.10"
+  }
+}
