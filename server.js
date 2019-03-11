@@ -17,6 +17,10 @@ var Produto = require('./app/models/product');
 
 // Controller do produto
 const product_controller = require('./app/controllers/product.controller');
+const person_controller = require('./app/controllers/person.controller');
+const profession_controller = require('./app/controllers/profession.controller');
+
+
 
 // Conexão com o Mongodb
 moongose.connect('mongodb://mongodb:27017/bdCrud');
@@ -46,6 +50,22 @@ router.get('/produtos/:productId', product_controller.findById);
 router.post('/produtos', product_controller.create);
 router.post('/produtos/edit/:productId', product_controller.update);
 router.get('/produtos/delete/:productId', product_controller.delete);
+// END PRODUCT ROUTES
+
+// PERSON ROUTES
+router.get('/pessoas', person_controller.find);
+router.get('/pessoas/:personId', person_controller.findById);
+router.post('/pessoas', person_controller.create);
+router.post('/pessoas/edit/:personId', person_controller.update);
+router.get('/pessoas/delete/:personId', person_controller.delete);
+// END PRODUCT ROUTES
+
+// PROFESSION ROUTES
+router.get('/profissoes', profession_controller.find);
+router.get('/profissoes/:professionId', profession_controller.findById);
+router.post('/profissoes', profession_controller.create);
+router.post('/profissoes/edit/:professionId', profession_controller.update);
+router.get('/profissoes/delete/:professionId', profession_controller.delete);
 // END PRODUCT ROUTES
 
 app.use('/api', router);

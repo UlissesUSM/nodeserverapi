@@ -40,6 +40,7 @@ exports.create = function (req, res) {
     produto.nome = req.body.nome;
     produto.preco = req.body.preco;
     produto.descricao = req.body.descricao;
+    produto.categoria.descricao = req.body.categoria.descricao;
 
     produto.save(function(error) {
         if (error)
@@ -62,7 +63,11 @@ exports.update = function (req, res) {
     Produto.findByIdAndUpdate(req.params.productId, {
         nome: req.body.nome || "Sem nome",
         preco: req.body.preco, 
-        descricao: req.body.descricao
+        descricao: req.body.descricao,
+        categoria: {
+            descricao: req.body.categoria.descricao
+        }
+
     }, {new: true})
     .then(product => {
         if(!product) {
